@@ -1,4 +1,4 @@
-# flow_fi
+# Flow Fi
    A web application to streamline the process for entering the cryptocurrency marketplace by offering cryptocurrency exchange options and wallets
    
 ## Check out the App!
