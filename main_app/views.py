@@ -66,6 +66,10 @@ class WalletCreate(LoginRequiredMixin, CreateView):
     model = Wallet
     fields = ['name', 'description', 'link']
 
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)
+
 class WalletUpdate(LoginRequiredMixin, UpdateView):
     model = Wallet
     fields = ['name', 'description', 'link']
