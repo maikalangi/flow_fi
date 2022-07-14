@@ -22,7 +22,7 @@ def signup(request):
     if form.is_valid():
       user = form.save()
       login(request, user)
-      return redirect('')
+      return redirect('home')
     else:
       error_message = 'Invalid sign up - try again'
   form = UserCreationForm()
@@ -39,16 +39,20 @@ class ExchangeDetail(DetailView):
 
 class ExchangeCreate(LoginRequiredMixin, CreateView):
     model = Exchange
-    fields = '__all__'
+    fields = ['name', 'description', 'link']
     success_url = '/exchanges/'
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)
 
 class ExchangeUpdate(LoginRequiredMixin, UpdateView):
     model = Exchange
-    fields = '__all__'
+    fields = ['name', 'description', 'link']
 
 class ExchangeDelete(LoginRequiredMixin, DeleteView):
     model = Exchange
-    success_url = '/exchanges'
+    success_url = '/exchanges/'
 
 class WalletIndex(ListView):
     model = Wallet
@@ -60,11 +64,11 @@ class WalletDetail(DetailView):
 
 class WalletCreate(LoginRequiredMixin, CreateView):
     model = Wallet
-    fields = '__all__'
+    fields = ['name', 'description', 'link']
 
 class WalletUpdate(LoginRequiredMixin, UpdateView):
     model = Wallet
-    fields = '__all__'
+    fields = ['name', 'description', 'link']
 
 class WalletDelete(LoginRequiredMixin, DeleteView):
     model = Wallet

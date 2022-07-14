@@ -10,6 +10,10 @@
                 {{exchange.description}}
             </a>
         </p>
+        {% if user.is_authenticated %}
+        <p><a href="{% url 'exchange_update' object.id %}">Update</a></p>
+        <p><a href="{% url 'exchange_delete' object.id %}">Delete</a></p>
+        {% endif %}
     </div>
 </div>
 

@@ -10,6 +10,10 @@
                 {{wallet.description}}
             </a>
         </p>
+        {% if user.is_authenticated %}
+        <p><a href="{% url 'wallet_update' object.id %}">Update</a></p>
+        <p><a href="{% url 'wallet_delete' object.id %}">Delete</a></p>
+        {% endif %}
     </div>
 </div>
 

@@ -3,4 +3,15 @@
 <h1>Delete Wallet</h1>
 <hr />
 
+<h4>
+    Are you sure you want to delete
+    <span class="teal-text">{{ object.name }}</span>?
+  </h4>
+  
+  <form action="" method="post">
+    {% csrf_token %}
+    <input class="btn red" type="submit" value="Yes - Delete" />
+    <a class="btn blue" href="{% url 'wallet_detail' object.id %}">Cancel</a>
+  </form>
+
 {% endblock %}
