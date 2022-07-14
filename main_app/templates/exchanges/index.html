@@ -2,6 +2,9 @@
 
 <h1>Exchanges</h1>
 <hr />
+<p>
+    A cryptocurrency exchange, or a digital currency exchange, is a business that allows customers to trade cryptocurrencies or digital currencies for other assets, such as conventional fiat money or other digital currencies.
+</p>
 {% for exchange in object_list %}
 <div class="card">
     <a href="{% url 'exchange_detail' exchange.id %}">
