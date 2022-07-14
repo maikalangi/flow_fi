@@ -14,14 +14,9 @@
 
 ## Screenshots 
 
-![Website Image](https://photos.google.com/search/_tra_/photo/AF1QipMXofKR1l7Nmpgnkr1sbrMyDE73KASVFuPrUeq2)(https://photos.app.goo.gl/Z6CRyGR3jPNsYDpF8)
+[![Website Image](https://photos.google.com/search/_tra_/photo/AF1QipMXofKR1l7Nmpgnkr1sbrMyDE73KASVFuPrUeq2)](https://photos.app.goo.gl/hxCN6U2mJBAiNJdc7)
 ![Website Image](https://photos.google.com/search/_tra_/photo/AF1QipPPTvF824AEVXGDYewjTBmfAFhecjw3G_K_X-Q5)
 [![[Website Image](https://photos.app.goo.gl/ZkKPjj2vkBotZrKcA)](https://photos.app.goo.gl/ZkKPjj2vkBotZrKcA)
-
-![Website Image]()
-![Website Image]()
-![Website Image]()
-![Website Image]()
 
 ## Future Enhancements
    
