@@ -1,6 +1,10 @@
 from typing import List
-from django.shortcuts import render
-from django.views.generic import ListView, DetailView, DeleteView, CreateView 
+from django.shortcuts import render, redirect
+from django.views.generic import ListView, DetailView, DeleteView, CreateView, UpdateView
+from django.contrib.auth import login
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import Exchange, Wallet
 
 # Create your views here.
@@ -11,6 +15,20 @@ def home(request):
 def about(request):
     return render(request, 'about.html')
 
+def signup(request):
+  error_message = ''
+  if request.method == 'POST':
+    form = UserCreationForm(request.POST)
+    if form.is_valid():
+      user = form.save()
+      login(request, user)
+      return redirect('')
+    else:
+      error_message = 'Invalid sign up - try again'
+  form = UserCreationForm()
+  context = {'form': form, 'error_message': error_message}
+  return render(request, 'registration/signup.html', context)
+
 class ExchangeIndex(ListView):
     model = Exchange
     template_name = 'exchanges/index.html'
@@ -19,6 +37,19 @@ class ExchangeDetail(DetailView):
     model = Exchange
     template_name = 'exchanges/detail.html'
 
+class ExchangeCreate(LoginRequiredMixin, CreateView):
+    model = Exchange
+    fields = '__all__'
+    success_url = '/exchanges/'
+
+class ExchangeUpdate(LoginRequiredMixin, UpdateView):
+    model = Exchange
+    fields = '__all__'
+
+class ExchangeDelete(LoginRequiredMixin, DeleteView):
+    model = Exchange
+    success_url = '/exchanges'
+
 class WalletIndex(ListView):
     model = Wallet
     template_name = 'wallets/index.html'
@@ -26,3 +57,15 @@ class WalletIndex(ListView):
 class WalletDetail(DetailView):
     model = Wallet
     template_name = 'wallets/detail.html'
+
+class WalletCreate(LoginRequiredMixin, CreateView):
+    model = Wallet
+    fields = '__all__'
+
+class WalletUpdate(LoginRequiredMixin, UpdateView):
+    model = Wallet
+    fields = '__all__'
+
+class WalletDelete(LoginRequiredMixin, DeleteView):
+    model = Wallet
+    success_url = '/wallets'
