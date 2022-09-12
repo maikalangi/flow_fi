@@ -3,17 +3,23 @@
    
 ## Check out the App!
 
-[APP LINK]()
+[APP LINK](https://flowfiapp.herokuapp.com/)
 
-  ## Technologies used
+## Technologies used
   
-    1. Python
-    2. Django
-    3. PostgreSQL
-    4. HTML5
+  1. Python
+  2. Django
+  3. PostgreSQL
+  4. HTML5
 
 ## Screenshots 
 
-![Website Image]()
+[![Website Image](https://photos.google.com/search/_tra_/photo/AF1QipMXofKR1l7Nmpgnkr1sbrMyDE73KASVFuPrUeq2)](https://photos.app.goo.gl/hxCN6U2mJBAiNJdc7)
+![Website Image](https://photos.google.com/search/_tra_/photo/AF1QipPPTvF824AEVXGDYewjTBmfAFhecjw3G_K_X-Q5)
+[![[Website Image](https://photos.app.goo.gl/ZkKPjj2vkBotZrKcA)](https://photos.app.goo.gl/ZkKPjj2vkBotZrKcA)
 
 ## Future Enhancements
+   
+  1. Add user favorites
+  2. Add user comments and ratings
+  3. Add pictures
